@@ -6,7 +6,7 @@ Welcome to the completed hands-on AI Agent masterclass!
 
 - [x] **Stage 0: The Foundry**
   - [x] Initialized modern environment with `uv` (`google-genai`, `python-dotenv`)
-  - [x] Connected to Gemini API (`gemini-3.5-flash-lite`) and tracked token costs
+  - [x] Connected to Gemini API and tracked token costs
   - [x] File: `00_foundry/01_ping_gemini.py`
 - [x] **Stage 1: Context & The Conversation Loop (Simulating Memory)**
   - [x] Overcame LLM amnesia by building an interactive terminal chat REPL
@@ -34,16 +34,50 @@ Welcome to the completed hands-on AI Agent masterclass!
   - [x] File: `05_devops_capstones/01_incident_sre_agent.py`
 - [x] **Stage 6: Multi-Agent Systems & Framework Deep Dive**
   - [x] Built an Orchestrator-Worker team (Incident Commander + 2 Specialists)
-  - [x] File: `06_multi_agent/01_supervisor_workers.py`
   - [x] Created the Framework Rosetta Stone (LangGraph, CrewAI, AutoGen)
-  - [x] File: `06_multi_agent/FRAMEWORK_TRANSLATION_GUIDE.md`
+  - [x] Files: `06_multi_agent/01_supervisor_workers.py` & `FRAMEWORK_TRANSLATION_GUIDE.md`
+- [x] **Stage 7: Universal Framework-Centric Agent (LangGraph + Multi-Provider Hot-Swapping)**
+  - [x] Built a single agent codebase that runs on **Gemini, OpenAI, Claude, Perplexity, or Local Ollama/vLLM**
+  - [x] Integrated LangGraph's universal ReAct StateGraph engine & MemorySaver checkpointing
+  - [x] Preserved Human-in-the-Loop security gates on shell commands
+  - [x] File: `07_universal_framework/01_universal_sre_agent.py`
 
 ---
 
-## 🚀 How to Run Stage 6
+## 🚀 How to Run Stage 7 (Universal Agent)
 
-Run the multi-agent incident drill:
+Run the agent:
 ```bash
-uv run python 06_multi_agent/01_supervisor_workers.py
+uv run python 07_universal_framework/01_universal_sre_agent.py
 ```
-Watch the Incident Commander delegate tasks to the Log Detective and the System Auditor, and synthesize a complete Executive Post-Mortem!
+
+### Hot-Swapping Models in `.env`:
+Just change `LLM_PROVIDER` in your `.env` file!
+
+```bash
+# 1. To use Google Gemini:
+LLM_PROVIDER=gemini
+GEMINI_MODEL=gemini-3.5-flash-lite
+GEMINI_API_KEY=your_key
+
+# 2. To use OpenAI:
+LLM_PROVIDER=openai
+OPENAI_MODEL=gpt-4o-mini
+OPENAI_API_KEY=your_key
+
+# 3. To use Anthropic Claude:
+LLM_PROVIDER=anthropic
+ANTHROPIC_MODEL=claude-3-5-sonnet-20241022
+ANTHROPIC_API_KEY=your_key
+
+# 4. To use Perplexity:
+LLM_PROVIDER=perplexity
+PERPLEXITY_MODEL=sonar
+PERPLEXITY_API_KEY=your_key
+
+# 5. To use Local Offline Models (Ollama / vLLM):
+LLM_PROVIDER=local
+LOCAL_LLM_BASE_URL=http://localhost:11434/v1
+LOCAL_MODEL_NAME=llama3
+```
+The exact same agent logic, tools, and loop run on all of them without touching a line of code!
