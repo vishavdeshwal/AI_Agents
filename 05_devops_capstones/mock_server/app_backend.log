@@ -1,0 +1,11 @@
+2026-11-20T08:15:01Z [INFO] API Gateway initialized on port 8080.
+2026-11-20T08:15:10Z [INFO] Database pool configured. max_connections=5
+2026-11-20T08:16:22Z [INFO] Request GET /health - 200 OK (2ms)
+2026-11-20T08:17:05Z [INFO] Request GET /users/104 - 200 OK (15ms)
+2026-11-20T08:18:12Z [WARN] Database pool high utilization: 4 of 5 connections in use.
+2026-11-20T08:18:45Z [WARN] Database pool exhausted: 5 of 5 connections in use. Queuing requests...
+2026-11-20T08:19:01Z [ERROR] Request GET /orders/checkout - 504 Gateway Timeout: Database connection acquisition timed out after 10000ms.
+2026-11-20T08:19:15Z [ERROR] Request POST /payments/charge - 500 Internal Server Error: PoolTimeout: QueuePool limit of size 5 overflow 0 reached.
+2026-11-20T08:19:30Z [CRITICAL] Health check FAILED: Database unreachable. Service degraded.
+2026-11-20T08:20:00Z [INFO] Stale lockfile detected at 05_devops_capstones/mock_server/db.lock
+2026-11-20T08:40:00Z [INFO] Lockfile manually cleared by SRE. Database connection pool reset and recovered.

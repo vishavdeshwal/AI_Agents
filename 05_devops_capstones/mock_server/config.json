@@ -1,0 +1,10 @@
+{
+    "service": "order-billing-service",
+    "port": 8080,
+    "database": {
+        "host": "postgres-cluster.internal",
+        "port": 5432,
+        "max_connections": 20,
+        "lockfile_path": "05_devops_capstones/mock_server/db.lock"
+    }
+}

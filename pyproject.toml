@@ -1,0 +1,13 @@
+[project]
+name = "learning-agent"
+version = "0.1.0"
+description = "Building AI Agents from scratch for DevOps Engineers"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "google-genai>=3.6.1",
+    "python-dotenv>=1.2.4",
+]
+
+[tool.uv]
+package = false
