@@ -84,8 +84,9 @@ def get_model():
         from langchain_openai import ChatOpenAI
         base_url = os.getenv("LOCAL_LLM_BASE_URL", "http://localhost:11434/v1")
         model_name = os.getenv("LOCAL_MODEL_NAME", "llama3")
+        api_key = os.getenv("LOCAL_API_KEY", "not-needed")
         print(f"   Local Server: {base_url} (Model: {model_name})")
-        return ChatOpenAI(model=model_name, api_key="not-needed", base_url=base_url)
+        return ChatOpenAI(model=model_name, api_key=api_key, base_url=base_url)
 
     else:
         print(f"[ERROR] Unsupported LLM_PROVIDER: '{provider}'. Choose gemini, openai, anthropic, perplexity, or local.")
